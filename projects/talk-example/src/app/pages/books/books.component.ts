@@ -17,8 +17,11 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) { }
 
   ngOnInit(): void {
-    this.booksService.getAllBooks().pipe(
-      tap(books => console.log(books.body))
+    this.booksService.getMarsImages().pipe(
+      tap(marsImagesResponse => console.log(marsImagesResponse.body))
+    ).subscribe();
+    this.booksService.getNASAImagesBySearch().pipe(
+      tap(nasaImagesResponse => console.log(nasaImagesResponse.body))
     ).subscribe();
   }
 }

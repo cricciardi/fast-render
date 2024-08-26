@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  // apiUrl: 'https://superheroapi.com/api.php/1cb154be78900a624eab0afda1650316'
-  apiUrl: 'https://openlibrary.org/search.json'
+  apiUrl: 'https://api.nasa.gov',
+  apiImageUrl: 'https://images-api.nasa.gov',
+  apiKey: 'WD6jXxpF1Lv8GB8UXxyrfp1oG3fIYOtG4auvEr3C'
 };
