@@ -36,38 +36,38 @@
         }
       }
     },
-    "talk-example": {
+    "images-at-light-speed": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/talk-example",
-      "sourceRoot": "projects/talk-example/src",
+      "root": "projects/images-at-light-speed",
+      "sourceRoot": "projects/images-at-light-speed/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/talk-example",
-            "index": "projects/talk-example/src/index.html",
-            "browser": "projects/talk-example/src/main.ts",
+            "outputPath": "dist/images-at-light-speed",
+            "index": "projects/images-at-light-speed/src/index.html",
+            "browser": "projects/images-at-light-speed/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/talk-example/tsconfig.app.json",
+            "tsConfig": "projects/images-at-light-speed/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/talk-example/public"
+                "input": "projects/images-at-light-speed/public"
               }
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "projects/talk-example/src/styles.scss"
+              "projects/images-at-light-speed/src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -101,10 +101,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "talk-example:build:production"
+              "buildTarget": "images-at-light-speed:build:production"
             },
             "development": {
-              "buildTarget": "talk-example:build:development"
+              "buildTarget": "images-at-light-speed:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -119,16 +119,16 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/talk-example/tsconfig.spec.json",
+            "tsConfig": "projects/images-at-light-speed/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/talk-example/public"
+                "input": "projects/images-at-light-speed/public"
               }
             ],
             "styles": [
-              "projects/talk-example/src/styles.scss"
+              "projects/images-at-light-speed/src/styles.scss"
             ],
             "scripts": []
           }
