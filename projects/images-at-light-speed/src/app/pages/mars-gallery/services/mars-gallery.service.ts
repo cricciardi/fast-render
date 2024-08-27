@@ -16,9 +16,9 @@ export class MarsGalleryService {
   constructor(private http: HttpClient) {
   }
 
-  // public getNASAImagesBySearch(): Observable<HttpResponse<any>> {
-  //   return this.http.get<any>(`${this.IMAGES_PATH}/search?q=apollo%2011&media_type=image&keywords=earth`);
-  // }
+  public getNASAImagesBySearch(planet: string): Observable<HttpResponse<any>> {
+    return this.http.get<any>(`${this.IMAGES_PATH}/search?q=apollo%2011&media_type=image&keywords=${planet}`);
+  }
 
   public getMarsGallery(): Observable<MarsGallery> {
     return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${this.API_KEY}`);

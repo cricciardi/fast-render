@@ -3,6 +3,7 @@ import {MarsGalleryService} from '../services/mars-gallery.service';
 import {catchError, tap, throwError} from 'rxjs';
 import {MarsGallery} from '../models/MarsItemGallery';
 import {HttpErrorResponse} from '@angular/common/http';
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
   selector: 'lib-technique-without-defer',
@@ -13,9 +14,9 @@ import {HttpErrorResponse} from '@angular/common/http';
       <div class="row">
         @for (marsItemGallery of marsGallery?.photos; track marsItemGallery) {
           <div class="col-4">
-            <div class="card w-100 align-content-center align-items-center border-0 pt-5">
+            <div class="card w-100 align-content-center align-items-center border-0 pt-5 bg-transparent">
               <img [src]="marsItemGallery?.img_src" width="400" height="auto" alt="">
-              <div class="card-body">
+              <div class="card-body text-white">
                 <h5 class="card-title text-center">{{ marsItemGallery?.earth_date ?? '' }} </h5>
                 <p class="card-text text-center">Rover: {{ marsItemGallery?.rover?.name ?? '' }}</p>
               </div>

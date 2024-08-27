@@ -10,8 +10,8 @@ html,body {
 $shadow: ();
 
 @for $i from 1 through $s {
-  $x: random(1920);
-  $y: random(1000);
+  $x: random(2560);
+  $y: random(1440);
   $shadow: $shadow, ( $x+px $y+px #fff) !global;
 }
 
