@@ -9,55 +9,60 @@ import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service"
   imports: [],
   template: `
     <div class="container justify-content-center align-items-center d-flex mt-5">
-      <div class="row d-flex justify-content-between" style="backdrop-filter: blur(10px);">
+      <div class="row d-flex justify-content-between w-100">
+        <div class="col-3">
+          <p class="text-white">
+            Information about:
+          </p>
+        </div>
         <div class="col-1">
+        </div>
+        <div class="col-1 cursor-pointer">
           <p class="text-white" (click)="getInformation('Sun')">
             Sun
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Mercury
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Venus
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Earth
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Jupiter
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Saturn
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Uranus
           </p>
         </div>
-        <div class="col-1">
+        <div class="col-1 cursor-pointer">
           <p class="text-white">
             Neptune
           </p>
         </div>
       </div>
     </div>
-    <div class="container mt-5" style="backdrop-filter: blur(10px);">
+    <div class="container mt-5">
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <p class="text-white">
-            Information about:
-          </p>
+
         </div>
         <div class="col-md-6 col-sm-12">
           <ol>
@@ -101,7 +106,7 @@ import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service"
 
     li {
       aspect-ratio: 1 / 1;
-      border: 1px dashed;
+      border: 1px solid #ffffff36;
       border-radius: 50%;
       display: grid;
       grid-area: 1 / 1;

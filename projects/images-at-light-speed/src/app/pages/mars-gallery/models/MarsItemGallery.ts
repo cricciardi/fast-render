@@ -27,7 +27,7 @@ export interface Rover {
 }
 
 export interface CameraRover {
-  name: string
+  name: string;
   full_name: string
 }
 

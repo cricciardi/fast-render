@@ -1,4 +1,4 @@
-<header>
+<div>
   <nav class="px-3 navbar navbar-expand-md navbar-dark fixed-top bg-nasa position-static">
     <a class="navbar-brand" routerLink="home">
       <img ngSrc="nasa-curiosity-logo.png" priority width="80" height="29" alt="">
@@ -16,7 +16,7 @@
           <a class="nav-link" routerLink="solar-system">Solar system</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="mars-gallery">Mars Gallery</a>
+          <a class="nav-link" routerLink="mars-gallery">Mars Photos Gallery</a>
         </li>
         <!--        <li class="nav-item">-->
         <!--          <a class="nav-link" routerLink="mars-gallery">Libri</a>-->
@@ -28,27 +28,14 @@
       </form>
     </div>
   </nav>
-</header>
-
-<div>
-<div class="star"></div>
-<div class="meteor-1"></div>
-<div class="meteor-2"></div>
-<div class="meteor-3"></div>
-<div class="meteor-4"></div>
-<div class="meteor-5"></div>
-<div class="meteor-6"></div>
-<div class="meteor-7"></div>
-<div class="meteor-8"></div>
-<div class="meteor-9"></div>
-<div class="meteor-10"></div>
-<div class="meteor-11"></div>
-<div class="meteor-12"></div>
-<div class="meteor-13"></div>
-<div class="meteor-14"></div>
-<div class="meteor-15"></div>
-<div style="padding-left:16px">
-  <router-outlet></router-outlet>
 </div>
+
+<div class="overflow-x-hidden">
+<div class="star"></div>
+  @for (star of stars; track $index) {
+    <div class="meteor-{{$index}} z-0"></div>
+  }
+
+  <router-outlet></router-outlet>
 </div>
 

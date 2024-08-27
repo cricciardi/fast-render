@@ -11,5 +11,5 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'talk-example';
+  public stars = Array(100).fill(0);
 }

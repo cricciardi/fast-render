@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {MarsGalleryComponent} from './pages/mars-gallery/components/mars-gallery.component';
 export const routes: Routes = [
   {
     path: '',
@@ -7,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'mars-gallery',
-    loadComponent: () => import('./pages/mars-gallery/components/mars-gallery.component').then((m) => m.MarsGalleryComponent)
+    component: MarsGalleryComponent,
   },
   {
     path: 'home',

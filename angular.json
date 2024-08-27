@@ -61,7 +61,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/images-at-light-speed/public"
+                "input": "projects/images-at-light-speed/src/assets"
               }
             ],
             "styles": [

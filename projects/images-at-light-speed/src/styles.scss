@@ -4,7 +4,8 @@ $s: 900;
 html,body {
   height: 100%;
   overflow: scroll;
-  background-image: radial-gradient(ellipse at top , #080e21 0%,  #1b2735 95%);
+  background-image: radial-gradient(ellipse at top , #080e21 0%,  #080e21 95%);
+  background-repeat: repeat-y;
 }
 
 $shadow: ();
@@ -23,9 +24,9 @@ $shadow: ();
 }
 
 @for $i from 1 through $n {
-  $v: random(90) + 9; // left
+  $v: random(100) + 9; // left
   $h: random(250) + 50; // top
-  $d: random(70)/10 + 3; // 秒數
+  $d: random(70)/10 + 3;
   .meteor-#{$i} {
     position: absolute;
     top: $h + px;
@@ -66,4 +67,8 @@ $shadow: ();
   100% {
     opacity: 0;
   }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

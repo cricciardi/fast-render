@@ -20,8 +20,21 @@ export class MarsGalleryService {
     return this.http.get<any>(`${this.IMAGES_PATH}/search?q=apollo%2011&media_type=image&keywords=${planet}`);
   }
 
-  public getMarsGallery(): Observable<MarsGallery> {
-    return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${this.API_KEY}`);
+  public getMarsGalleryCHEMCAM(): Observable<MarsGallery> {
+    return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=${this.API_KEY}&camera=chemcam`);
   }
+
+  public getMarsGalleryFHAZ(): Observable<MarsGallery> {
+    return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=${this.API_KEY}&camera=fhaz`);
+  }
+
+  public getMarsGalleryMARDI(): Observable<MarsGallery> {
+    return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=${this.API_KEY}&camera=mardi`);
+  }
+
+  public getMarsGalleryRHAZ(): Observable<MarsGallery> {
+    return this.http.get<MarsGallery>(`${this.BASE_PATH}/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=${this.API_KEY}&camera=rhaz`);
+  }
+
 
 }
