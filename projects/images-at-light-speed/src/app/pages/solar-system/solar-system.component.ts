@@ -2,19 +2,18 @@ import {Component} from '@angular/core';
 import {catchError, tap, throwError} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service";
+import {INasaApiResponse} from "./models/solar-system.model";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-solar-system',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass
+  ],
   template: `
     <div class="container justify-content-center align-items-center d-flex mt-5">
       <div class="row d-flex justify-content-between w-100">
-        <div class="col-3">
-          <p class="text-white">
-            Information about:
-          </p>
-        </div>
         <div class="col-1">
         </div>
         <div class="col-1 cursor-pointer">
@@ -23,65 +22,79 @@ import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service"
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Mercury')">
             Mercury
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Venus')">
             Venus
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Earth')">
             Earth
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Mars')">
+            Mars
+          </p>
+        </div>
+        <div class="col-1 cursor-pointer">
+          <p class="text-white" (click)="getInformation('Jupiter')">
             Jupiter
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Saturn')">
             Saturn
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Uranus')">
             Uranus
           </p>
         </div>
         <div class="col-1 cursor-pointer">
-          <p class="text-white">
+          <p class="text-white" (click)="getInformation('Neptune')">
             Neptune
           </p>
         </div>
       </div>
     </div>
     <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-
-        </div>
-        <div class="col-md-6 col-sm-12">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-sm-12">
           <ol>
-            <li class="sun"></li>
-            <li class="mercury"></li>
-            <li class="venus"></li>
-            <li class="earth"></li>
-            <li class="mars"></li>
-            <li class="jupiter"></li>
-            <li class="saturn"></li>
-            <li class="uranus"></li>
-            <li class="neptune"></li>
+            <li class="sun" [ngClass]="planetSelected == 'Sun' ? 'planet-selected'  : '' "></li>
+            <li class="mercury" [ngClass]="planetSelected == 'Mercury' ? 'planet-selected' : '' "></li>
+            <li class="venus" [ngClass]="planetSelected == 'Venus' ? 'planet-selected'  : ''"></li>
+            <li class="earth" [ngClass]="planetSelected == 'Earth' ? 'planet-selected'  : ''"></li>
+            <li class="mars" [ngClass]="planetSelected == 'Mars' ? 'planet-selected'  : ''"></li>
+            <li class="jupiter" [ngClass]="planetSelected == 'Jupiter' ? 'planet-selected' : '' "></li>
+            <li class="saturn" [ngClass]="planetSelected == 'Saturn' ? 'planet-selected' : '' "></li>
+            <li class="uranus" [ngClass]="planetSelected == 'Uranus' ? 'planet-selected'  : ''"></li>
+            <li class="neptune" [ngClass]="planetSelected == 'Neptune' ? 'planet-selected' : '' "></li>
           </ol>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          @for (data of nasaApiResponse?.collection?.items; track data) {
+            @for (img of data?.links; track img) {
+              <img [src]="img?.href" width="400" height="auto" alt="" class="m-2">
+            }
+          }
         </div>
       </div>
 
     </div>
   `,
   styles: `
+
+    .planet-selected::after {
+      box-shadow: 0px 0px 20px 15px #888888 !important;
+    }
+
     .text-planet {
       display: inline-block;
       text-align: center;
@@ -118,7 +131,6 @@ import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service"
         aspect-ratio: 1 / 1;
         background: var(--b, hsl(0, 0%, 50%));
         border-radius: 50%;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         content: '';
         display: block;
         offset-path: content-box;
@@ -202,14 +214,17 @@ import {MarsGalleryService} from "../mars-gallery/services/mars-gallery.service"
     }`
 })
 export class SolarSystemComponent {
-  public data: any;
+  public nasaApiResponse: INasaApiResponse | any;
+  public planetSelected: string | undefined;
 
   constructor(private marsGalleryService: MarsGalleryService) {
   }
 
   public getInformation(planet: string): void {
+    this.planetSelected = planet;
+    console.log(this.planetSelected);
     this.marsGalleryService.getNASAImagesBySearch(planet).pipe(
-      tap(data => console.log(data)),
+      tap(data => this.nasaApiResponse = data),
       catchError((error: HttpErrorResponse) => {
         console.error(error);
         return throwError(() => error);
