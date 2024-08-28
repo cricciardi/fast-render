@@ -1,4 +1,4 @@
-interface ItemData {
+export interface ItemData {
   description: string;
   title: string;
   photographer?: string;
@@ -13,19 +13,19 @@ interface ItemData {
   album?: string[];
 }
 
-interface ItemLink {
+export interface ItemLink {
   href: string;
   rel: string;
   render?: string;
 }
 
-interface CollectionItem {
+export interface CollectionItem {
   href: string;
   data: ItemData[];
   links: ItemLink[];
 }
 
-interface NasaCollection {
+export interface NasaCollection {
   version: string;
   href: string;
   items: CollectionItem[];

@@ -3,7 +3,7 @@ import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MarsGallery} from '../models/MarsItemGallery';
-import {INasaApiResponse} from "../../solar-system/models/solar-system.model";
+import {INasaApiResponse} from "../../solar-system/models/SolarSystem";
 
 @Injectable({
   providedIn: 'root',

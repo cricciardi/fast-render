@@ -15,7 +15,7 @@ import {AsyncPipe} from '@angular/common';
     @if (marsGallery$ | async; as _marsGallery) {
       @for (marsItemGallery of _marsGallery?.photos; track marsItemGallery) {
         <div class="col-4">
-          <div class="card w-100 align-content-center align-items-center border-0 pt-5 bg-transparent">
+          <div class="card w-100 align-content-center align-items-center border-0 pt-2 bg-transparent">
             <img [src]="marsItemGallery?.img_src" width="400" height="auto" alt="">
             <div class="card-body text-white">
               <h5 class="card-title text-center">{{ marsItemGallery?.earth_date ?? '' }} </h5>
@@ -25,8 +25,10 @@ import {AsyncPipe} from '@angular/common';
         </div>
       }
     } @else {
-      <div class="col-12 text-center mh-100">
-        <p class="text-white"> Caricamento ...</p>
+      <div class="d-flex align-items-center justify-content-center flex-column">
+        <div class="spinner-border text-white spinner-big" role="status">
+        </div>
+        <span class="sr-only ms-2 text-white mt-2">Caricamento...</span>
       </div>
     }
   `,

@@ -18,19 +18,12 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="mars-gallery">Mars Photos Gallery</a>
         </li>
-        <!--        <li class="nav-item">-->
-        <!--          <a class="nav-link" routerLink="mars-gallery">Libri</a>-->
-        <!--        </li>-->
       </ul>
-      <form class="form-inline mt-2 mt-md-0 d-flex">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-danger mx-2 my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   </nav>
 </div>
 
-<div class="overflow-x-hidden">
+<div class="position-relative overflow-x-hidden">
 <div class="star"></div>
   @for (star of stars; track $index) {
     <div class="meteor-{{$index}} z-0"></div>

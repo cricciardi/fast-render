@@ -22,37 +22,37 @@ import {MarsGalleryRhazListComponent} from './mars-gallery-rhaz-list.component';
         <h1 class="text-white text-center mb-5">Curiosity Rover</h1>
         <img ngSrc="curiosity.png" priority width="1074" height="700" alt="">
 
-                <h6 class="text-white text-center mb-5" #chemcam>CHEMCAM CAMERA</h6>
-                <app-mars-gallery-chemcam-list class="row"></app-mars-gallery-chemcam-list>
+                <h3 class="text-danger text-center mt-5" #chemcam>CHEMCAM CAMERA</h3>
+                <app-mars-gallery-chemcam-list class="row mb-5 mt-2"></app-mars-gallery-chemcam-list>
 
-                <h6 class="text-white text-center mb-5" #fhaz>FHAZ CAMERA</h6>
-                <app-mars-gallery-fhaz-list class="row"></app-mars-gallery-fhaz-list>
+                <h3 class="text-danger text-center" #fhaz>FHAZ CAMERA</h3>
+                <app-mars-gallery-fhaz-list class="row mb-5 mt-2"></app-mars-gallery-fhaz-list>
 
-                <h6 class="text-white text-center mb-5" #rhaz>RHAZ CAMERA</h6>
-                <app-mars-gallery-rhaz-list class="row"></app-mars-gallery-rhaz-list>
+                <h3 class="text-danger text-center" #rhaz>RHAZ CAMERA</h3>
+                <app-mars-gallery-rhaz-list class="row mb-5 mt-2"></app-mars-gallery-rhaz-list>
 
-                <h6 class="text-white text-center mb-5" #mardi>MARDI CAMERA</h6>
-                <app-mars-gallery-mardi-list class="row"></app-mars-gallery-mardi-list>
+                <h3 class="text-danger text-center" #mardi>MARDI CAMERA</h3>
+                <app-mars-gallery-mardi-list class="row mb-5 mt-2"></app-mars-gallery-mardi-list>
 
 
-<!--        <h6 class="text-white text-center mb-5" #chemcam>CHEMCAM CAMERA</h6>-->
+<!--        <h3 class="text-danger text-center mt-5" #chemcam>CHEMCAM CAMERA</h3>-->
 <!--        @defer (on viewport(chemcam)) {-->
-<!--          <app-mars-gallery-chemcam-list class="row"></app-mars-gallery-chemcam-list>-->
+<!--          <app-mars-gallery-chemcam-list class="row mb-5 mt-2"></app-mars-gallery-chemcam-list>-->
 <!--        }-->
-<!--        <h6 class="text-white text-center mb-5" #fhaz>FHAZ CAMERA</h6>-->
+<!--        <h3 class="text-danger text-center" #fhaz>FHAZ CAMERA</h3>-->
 <!--        @defer (on viewport(fhaz)) {-->
-<!--          <app-mars-gallery-fhaz-list class="row"></app-mars-gallery-fhaz-list>-->
+<!--          <app-mars-gallery-fhaz-list class="row mb-5 mt-2"></app-mars-gallery-fhaz-list>-->
 <!--        }-->
-<!--        <h6 class="text-white text-center mb-5" #rhaz>RHAZ CAMERA</h6>-->
+<!--        <h3 class="text-danger text-center" #rhaz>RHAZ CAMERA</h3>-->
 <!--        @defer (on viewport(rhaz)) {-->
-<!--          <app-mars-gallery-rhaz-list class="row"></app-mars-gallery-rhaz-list>-->
+<!--          <app-mars-gallery-rhaz-list class="row mb-5 mt-2"></app-mars-gallery-rhaz-list>-->
 <!--        }-->
-<!--        <h6 class="text-white text-center mb-5" #mardi>MARDI CAMERA</h6>-->
+<!--        <h3 class="text-danger text-center" #mardi>MARDI CAMERA</h3>-->
 <!--        @defer (on viewport(mardi)) {-->
-<!--          <app-mars-gallery-mardi-list class="row"></app-mars-gallery-mardi-list>-->
-<!--        } @placeholder {-->
-<!--          <div class="col-12 text-center">-->
-<!--            <p class="text-white"> Caricamento ...</p>-->
+<!--          <app-mars-gallery-mardi-list class="row mb-5 mt-2"></app-mars-gallery-mardi-list>-->
+<!--        } @loading {-->
+<!--          <div class="spinner-border" role="status">-->
+<!--            <span class="sr-only">Caricamento...</span>-->
 <!--          </div>-->
 <!--        }-->
 
