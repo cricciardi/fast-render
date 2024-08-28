@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../../../environments/environment';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MarsGallery} from '../models/MarsItemGallery';
+import {INasaApiResponse} from "../../solar-system/models/solar-system.model";
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +17,8 @@ export class MarsGalleryService {
   constructor(private http: HttpClient) {
   }
 
-  public getNASAImagesBySearch(planet: string): Observable<HttpResponse<any>> {
-    return this.http.get<any>(`${this.IMAGES_PATH}/search?q=apollo%2011&media_type=image&keywords=${planet}`);
+  public getNASAImagesBySearch(planet: string): Observable<INasaApiResponse> {
+    return this.http.get<INasaApiResponse>(`${this.IMAGES_PATH}/search?q=${planet}`);
   }
 
   public getMarsGalleryCHEMCAM(): Observable<MarsGallery> {

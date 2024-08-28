@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [],
   template: `
     <div class="container">
+      <h1 class="justify-content-center d-flex text-danger">Astronomy Picture of the Day</h1>
       <div class="card w-100 align-content-center align-items-center border-0 pt-5 bg-transparent">
         @if (apod?.media_type == 'image') {
           <img [src]="apod?.url" width="700" height="auto" alt="">

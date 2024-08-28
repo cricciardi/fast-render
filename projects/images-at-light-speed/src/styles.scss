@@ -12,7 +12,7 @@ $shadow: ();
 
 @for $i from 1 through $s {
   $x: random(2560);
-  $y: random(1440);
+  $y: random(3400);
   $shadow: $shadow, ( $x+px $y+px #fff) !global;
 }
 
