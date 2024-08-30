@@ -10,12 +10,11 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
     NgClass,
     NgComponentOutlet
   ],
-  template: `<div class="container justify-content-center align-items-center d-flex mt-5">
-    <div class="row d-flex justify-content-between w-100">
-      <div class="col-1">
-      </div>
+  template: `
+    <div class="container justify-content-center align-items-center d-flex mt-5 pe-0">
+    <div class="row d-flex justify-content-between">
       @for (planet of listOfPlanets; track planet) {
-        <div class="col-1 cursor-pointer">
+        <div class="cursor-pointer d-flex justify-content-center col-lg-1 col-md-2 col-3">
           <p class="text-white" (click)="loadComponent(planet)">
             {{ planet }}
           </p>
@@ -36,8 +35,8 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
       </div>
       <ng-container *ngComponentOutlet="uploadComponent"></ng-container>
     </div>
-
-  </div>`,
+  </div>
+  `,
   styles: [
     `.planet-selected::after {
     box-shadow: 0 0 20px 15px #888888 !important;
