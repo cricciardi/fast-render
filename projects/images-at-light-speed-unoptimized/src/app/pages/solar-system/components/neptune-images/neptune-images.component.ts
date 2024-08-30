@@ -12,6 +12,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class NeptuneImagesComponent implements OnInit {
   public nasaApi$: Observable<INasaApiResponse> | undefined;
+  public readonly Planets = Planets;
 
   constructor(private marsGalleryService: MarsGalleryService) {
   }

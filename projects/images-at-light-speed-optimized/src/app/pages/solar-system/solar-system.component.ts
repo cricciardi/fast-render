@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {PlanetComponents, Planets} from './enum/planets';
 import {PlanetComponentModel} from './models/PlanetComponentModel';
-import {VenusImagesComponent} from './components/venus-images/venus-images.component';
 import {NgClass, NgComponentOutlet} from '@angular/common';
 
 @Component({
@@ -29,7 +28,9 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
       <div class="col-md-7 col-sm-12">
         <ol>
           @for (planet of listOfPlanets; track planet) {
-            <li class="{{planet?.toLowerCase()}}" [ngClass]="planetSelected == planet ? 'planet-selected'  : '' "></li>
+            <li class="{{planet?.toLowerCase()}} cursor-pointer" (click)="loadComponent(planet)"
+                [ngClass]="{'planet-selected' : planetSelected == planet, 'z-3' : planet == Planets.SUN}">
+            </li>
           }
         </ol>
       </div>
@@ -37,7 +38,8 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
     </div>
 
   </div>`,
-  styles: [`.planet-selected::after {
+  styles: [
+    `.planet-selected::after {
     box-shadow: 0 0 20px 15px #888888 !important;
   }
 
@@ -169,6 +171,7 @@ export class SolarSystemComponent {
 
   loadComponent(planet: string) {
     this.planetSelected = planet;
+    console.log('planet', planet);
 
     //CODE SPLITTING
     const callbackToSend = PlanetComponents?.find((el: PlanetComponentModel) => el.planet === planet)?.componentCallback;
