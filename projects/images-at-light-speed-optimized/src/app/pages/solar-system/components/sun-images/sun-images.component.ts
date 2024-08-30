@@ -4,11 +4,15 @@ import {Planets} from '../../enum/planets';
 import {MarsGalleryService} from '../../../mars-gallery/services/mars-gallery.service';
 import {catchError, Observable, throwError} from 'rxjs';
 import {HttpErrorResponse} from '@angular/common/http';
+import {ListImagesComponent} from '../list-images/list-images.component';
 
 @Component({
   selector: 'app-sun-images',
-  templateUrl: './sun-images.component.html',
-  styleUrl: './sun-images.component.scss'
+  standalone: true,
+  template: '<app-list-images [nasaApi$]="nasaApi$"></app-list-images>',
+  imports: [
+    ListImagesComponent
+  ]
 })
 export class SunImagesComponent implements OnInit {
   public nasaApi$: Observable<INasaApiResponse> | undefined;
