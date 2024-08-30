@@ -36,38 +36,38 @@
         }
       }
     },
-    "images-at-light-speed": {
+    "images-at-light-speed-unoptimized": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/images-at-light-speed",
-      "sourceRoot": "projects/images-at-light-speed/src",
+      "root": "projects/images-at-light-speed-unoptimized",
+      "sourceRoot": "projects/images-at-light-speed-unoptimized/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/images-at-light-speed",
-            "index": "projects/images-at-light-speed/src/index.html",
-            "browser": "projects/images-at-light-speed/src/main.ts",
+            "outputPath": "dist/images-at-light-speed-unoptimized",
+            "index": "projects/images-at-light-speed-unoptimized/src/index.html",
+            "browser": "projects/images-at-light-speed-unoptimized/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/images-at-light-speed/tsconfig.app.json",
+            "tsConfig": "projects/images-at-light-speed-unoptimized/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/images-at-light-speed/src/assets"
+                "input": "projects/images-at-light-speed-unoptimized/src/assets"
               }
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "projects/images-at-light-speed/src/styles.scss"
+              "projects/images-at-light-speed-unoptimized/src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -101,10 +101,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "images-at-light-speed:build:production"
+              "buildTarget": "images-at-light-speed-unoptimized:build:production"
             },
             "development": {
-              "buildTarget": "images-at-light-speed:build:development"
+              "buildTarget": "images-at-light-speed-unoptimized:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -119,16 +119,115 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/images-at-light-speed/tsconfig.spec.json",
+            "tsConfig": "projects/images-at-light-speed-unoptimized/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/images-at-light-speed/public"
+                "input": "projects/images-at-light-speed-unoptimized/public"
               }
             ],
             "styles": [
-              "projects/images-at-light-speed/src/styles.scss"
+              "projects/images-at-light-speed-unoptimized/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "images-at-light-speed-optimized": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/images-at-light-speed-optimized",
+      "sourceRoot": "projects/images-at-light-speed-optimized/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/images-at-light-speed-optimized",
+            "index": "projects/images-at-light-speed-optimized/src/index.html",
+            "browser": "projects/images-at-light-speed-optimized/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/images-at-light-speed-optimized/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/images-at-light-speed-optimized/src/assets"
+              }
+            ],
+            "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "projects/images-at-light-speed-optimized/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "images-at-light-speed-optimized:build:production"
+            },
+            "development": {
+              "buildTarget": "images-at-light-speed-optimized:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/images-at-light-speed-optimized/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/images-at-light-speed-optimized/public"
+              }
+            ],
+            "styles": [
+              "projects/images-at-light-speed-optimized/src/styles.scss"
             ],
             "scripts": []
           }
