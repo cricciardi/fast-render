@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {PlanetComponents, Planets} from './enum/planets';
 import {PlanetComponentModel} from './models/PlanetComponentModel';
-import {VenusImagesComponent} from './components/venus-images/venus-images.component';
 import {NgClass, NgComponentOutlet} from '@angular/common';
 
 @Component({
@@ -11,12 +10,11 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
     NgClass,
     NgComponentOutlet
   ],
-  template: `<div class="container justify-content-center align-items-center d-flex mt-5">
-    <div class="row d-flex justify-content-between w-100">
-      <div class="col-1">
-      </div>
+  template: `
+    <div class="container justify-content-center align-items-center d-flex mt-5 pe-0">
+    <div class="row d-flex justify-content-between">
       @for (planet of listOfPlanets; track planet) {
-        <div class="col-1 cursor-pointer">
+        <div class="cursor-pointer d-flex justify-content-center col-lg-1 col-md-2 col-3">
           <p class="text-white" (click)="loadComponent(planet)">
             {{ planet }}
           </p>
@@ -29,15 +27,18 @@ import {NgClass, NgComponentOutlet} from '@angular/common';
       <div class="col-md-7 col-sm-12">
         <ol>
           @for (planet of listOfPlanets; track planet) {
-            <li class="{{planet?.toLowerCase()}}" [ngClass]="planetSelected == planet ? 'planet-selected'  : '' "></li>
+            <li class="{{planet?.toLowerCase()}} cursor-pointer" (click)="loadComponent(planet)"
+                [ngClass]="{'planet-selected' : planetSelected == planet, 'z-3' : planet == Planets.SUN}">
+            </li>
           }
         </ol>
       </div>
       <ng-container *ngComponentOutlet="uploadComponent"></ng-container>
     </div>
-
-  </div>`,
-  styles: [`.planet-selected::after {
+  </div>
+  `,
+  styles: [
+    `.planet-selected::after {
     box-shadow: 0 0 20px 15px #888888 !important;
   }
 
@@ -169,6 +170,7 @@ export class SolarSystemComponent {
 
   loadComponent(planet: string) {
     this.planetSelected = planet;
+    console.log('planet', planet);
 
     //CODE SPLITTING
     const callbackToSend = PlanetComponents?.find((el: PlanetComponentModel) => el.planet === planet)?.componentCallback;

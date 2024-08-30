@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start_unoptimized_project": "ng serve --project images-at-light-speed-unoptimized",
-    "start_optimized_project": "ng serve --project images-at-light-speed-optimized",
+    "start_unoptimized_project": "ng serve --project images-at-light-speed-unoptimized --port 4200",
+    "start_optimized_project": "ng serve --project images-at-light-speed-optimized --port 4201",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

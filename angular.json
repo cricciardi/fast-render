@@ -54,6 +54,7 @@
             "index": "projects/images-at-light-speed-unoptimized/src/index.html",
             "browser": "projects/images-at-light-speed-unoptimized/src/main.ts",
             "polyfills": [
+              "@angular/localize/init",
               "zone.js"
             ],
             "tsConfig": "projects/images-at-light-speed-unoptimized/tsconfig.app.json",
@@ -153,6 +154,7 @@
             "index": "projects/images-at-light-speed-optimized/src/index.html",
             "browser": "projects/images-at-light-speed-optimized/src/main.ts",
             "polyfills": [
+              "@angular/localize/init",
               "zone.js"
             ],
             "tsConfig": "projects/images-at-light-speed-optimized/tsconfig.app.json",
