@@ -5,6 +5,7 @@
     "ng": "ng",
     "start_unoptimized_project": "ng serve --project images-at-light-speed-unoptimized --port 4200",
     "start_optimized_project": "ng serve --project images-at-light-speed-optimized --port 4201",
+    "start_lazy_loading": "ng serve --project images-at-light-speed-lazy-loading --port 4202",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
