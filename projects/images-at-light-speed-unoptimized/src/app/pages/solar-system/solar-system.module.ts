@@ -14,15 +14,18 @@ import {UranusImagesComponent} from './components/uranus-images/uranus-images.co
 import {NeptuneImagesComponent} from './components/neptune-images/neptune-images.component';
 
 @NgModule({
-  declarations: [SolarSystemComponent, SunImagesComponent, MercuryImagesComponent, VenusImagesComponent,
-    ListImagesComponent, EarthImagesComponent, JupiterImagesComponent, MarsImagesComponent, SaturnImagesComponent, UranusImagesComponent,
-    NeptuneImagesComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([{
-      path: '',
-      component: SolarSystemComponent,
-    }])
-  ],
+    declarations: [SolarSystemComponent, SunImagesComponent, MercuryImagesComponent, VenusImagesComponent,
+        ListImagesComponent, EarthImagesComponent, JupiterImagesComponent, MarsImagesComponent, SaturnImagesComponent, UranusImagesComponent,
+        NeptuneImagesComponent],
+    imports: [
+        CommonModule,
+        RouterModule.forChild([{
+            path: '',
+            component: SolarSystemComponent,
+        }])
+    ],
+    exports: [
+        SunImagesComponent
+    ]
 })
 export class SolarSystemModule { }
