@@ -18,32 +18,6 @@
         }
       </ol>
     </div>
-    @if (planetSelected == Planets.SUN) {
-      <app-sun-images></app-sun-images>
-    }
-    @if (planetSelected == Planets.MERCURY) {
-      <app-mercury-images></app-mercury-images>
-    }
-    @if (planetSelected == Planets.VENUS) {
-      <app-venus-images></app-venus-images>
-    }
-    @if (planetSelected == Planets.EARTH) {
-      <app-earth-images></app-earth-images>
-    }
-    @if (planetSelected == Planets.MARS) {
-      <app-mars-images></app-mars-images>
-    }
-    @if (planetSelected == Planets.JUPITER) {
-      <app-jupiter-images></app-jupiter-images>
-    }
-    @if (planetSelected == Planets.SATURN) {
-      <app-saturn-images></app-saturn-images>
-    }
-    @if (planetSelected == Planets.URANUS) {
-      <app-uranus-images></app-uranus-images>
-    }
-    @if (planetSelected == Planets.NEPTUNE) {
-      <app-neptune-images></app-neptune-images>
-    }
+    <ng-container *ngComponentOutlet="uploadComponent"></ng-container>
   </div>
 </div>
