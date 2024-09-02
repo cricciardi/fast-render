@@ -11,5 +11,5 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public stars = Array(100).fill(0);
+  public stars = Array(10).fill(0);
 }
