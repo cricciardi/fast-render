@@ -7,6 +7,9 @@
     "start_optimized_project": "ng serve --project images-at-light-speed-optimized --port 4201",
     "start_lazy_loading": "ng serve --project images-at-light-speed-lazy-loading --port 4202",
     "start_code_spitting": "ng serve --project images-at-light-speed-code-splitting --port 4203",
+    "start_standalone": "ng serve --project images-at-light-speed-standalone --port 4204",
+    "start_preload_strategies": "ng serve --project images-at-light-speed-preload-strategies --port 4205",
+    "start_defer": "ng serve --project images-at-light-speed-defer --port 4206",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
