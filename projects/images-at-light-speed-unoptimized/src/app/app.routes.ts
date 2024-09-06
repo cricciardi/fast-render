@@ -1,7 +1,8 @@
-import { Routes } from '@angular/router';
-import {MarsGalleryComponent} from './pages/mars-gallery/components/mars-gallery.component';
-import {HomeComponent} from './pages/home/components/home.component';
-import {SolarSystemComponent} from './pages/solar-system/solar-system.component';
+import {Routes} from "@angular/router";
+import {HomeComponent} from "./pages/home/home.component";
+import {MarsGalleryComponent} from "./pages/mars-gallery/mars-gallery.component";
+import {SolarSystemComponent} from "./pages/solar-system/solar-system.component";
+
 export const routes: Routes = [
   {
     path: '',
