@@ -172,9 +172,8 @@ export class SolarSystemComponent {
 
   public uploadComponent: any;
 
-  loadComponent(planet: string) {
+  public loadComponent(planet: string) {
     this.planetSelected = planet;
-    console.log('planet', planet);
 
     //CODE SPLITTING
     const callbackToSend = PlanetComponents?.find((el: PlanetComponentModel) => el.planet === planet)?.componentCallback;
