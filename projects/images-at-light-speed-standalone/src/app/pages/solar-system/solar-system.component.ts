@@ -213,7 +213,7 @@ export class SolarSystemComponent {
   public listOfPlanets = Object.values(Planets);
   public planetSelected: string | undefined;
 
-  loadComponent(planet: string) {
+  public loadComponent(planet: string) {
     this.planetSelected = planet;
   }
 }

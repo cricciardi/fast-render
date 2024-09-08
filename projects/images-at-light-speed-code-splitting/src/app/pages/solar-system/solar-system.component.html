@@ -14,7 +14,8 @@
     <div class="col-md-6 col-sm-12">
       <ol>
         @for (planet of listOfPlanets; track planet) {
-          <li class="{{planet?.toLowerCase()}}" [ngClass]="planetSelected == planet ? 'planet-selected'  : '' "></li>
+          <li class="{{planet?.toLowerCase()}}"
+              [ngClass]="planetSelected == planet ? 'planet-selected'  : '' "></li>
         }
       </ol>
     </div>

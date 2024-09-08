@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## ESBUILD ANALYZER
+eseguire la build (esempio: npm run build:esbuild:unoptimized), prendere il file stats.json presente nella cartella dist e caricarlo su:
+https://esbuild.github.io/analyze/
