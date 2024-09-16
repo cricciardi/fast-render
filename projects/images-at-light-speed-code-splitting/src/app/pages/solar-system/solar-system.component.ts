@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
-import {Planets} from './enum/planets';
-import {PlanetComponents} from "../../../../../images-at-light-speed-optimized/src/app/pages/solar-system/enum/planets";
-import {
-  PlanetComponentModel
-} from "../../../../../images-at-light-speed-optimized/src/app/pages/solar-system/models/PlanetComponentModel";
+import {PlanetComponents, Planets} from './enum/planets';
+import {PlanetComponentModel} from './models/PlanetComponentModel';
 
 @Component({
   selector: 'app-solar-system',
