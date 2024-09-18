@@ -20,7 +20,7 @@ import {MarsGalleryRhazListComponent} from './mars-gallery-rhaz-list.component';
     <div class="container">
       <div class="row justify-content-center mt-5">
         <h1 class="text-white text-center mb-5">Curiosity Rover</h1>
-        <img ngSrc="curiosity.png" priority width="1074" height="700" alt="">
+        <img ngSrc="curiosity.png" class="h-auto" priority width="1074" height="700" alt="">
 
         <h3 class="text-danger text-center mt-5" #chemcam>CHEMCAM CAMERA</h3>
         @defer (on viewport(chemcam)) {
