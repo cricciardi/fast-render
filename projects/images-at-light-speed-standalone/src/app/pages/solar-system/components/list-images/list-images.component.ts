@@ -14,7 +14,7 @@ import {AsyncPipe} from '@angular/common';
     <div class="col-md-12 col-sm-12">' +
       @for (item of (nasaApi$ | async)?.collection?.items; track item) {
         @for (img of item?.links; track img) {
-          <img [src]="img?.href" width="400" height="auto" alt="" class="m-2">
+          <img [src]="img?.href" width="300" height="auto" alt="" class="m-2">
         }
       }
     </div>`
